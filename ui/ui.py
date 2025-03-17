@@ -104,6 +104,7 @@ def main():
             try:
                 with open("results.json") as f:
                     data = json.load(f)
+                    json_data = json.dumps(data, indent=2)  # Serialize for download
                     
                 # Results display
                 st.subheader("Synthesis Result")
