@@ -129,7 +129,12 @@ def main():
                     with st.expander("Dissenting Opinions"):
                         st.write(data['synthesis']['dissent'])
 
-                st.download_button("Download Full Results", "results.json")
+                st.download_button(
+                    label="Download Full Results",
+                    data=json_data,
+                    file_name="results_1.json",
+                    mime="application/json"
+                )
                 
             except json.JSONDecodeError:
                 st.error("Invalid results format. Check consortium output.")
