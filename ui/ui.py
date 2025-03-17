@@ -3,12 +3,7 @@ import streamlit as st
 import json
 import subprocess
 from pathlib import Path
-import os
 
-# Check if API key is set
-if "OPENAI_API_KEY" not in os.environ:
-    st.error("OPENAI_API_KEY environment variable is not set. Please set it before running the app.")
-    st.stop()
 def main():
     st.title("LLM Consortium Orchestrator")
     
@@ -104,8 +99,7 @@ def main():
             try:
                 with open("results.json") as f:
                     data = json.load(f)
-                    json_data = json.dumps(data, indent=2)  # Serialize for download
-                    
+                    json_data = json.dumps(data, indent=2)
                 # Results display
                 st.subheader("Synthesis Result")
                 col1, col2 = st.columns(2)
@@ -133,7 +127,7 @@ def main():
                 st.download_button(
                     label="Download Full Results",
                     data=json_data,
-                    file_name="results_1.json",
+                    file_name="results.json",
                     mime="application/json"
                 )
                 
