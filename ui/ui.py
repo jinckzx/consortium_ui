@@ -146,6 +146,8 @@ import json
 import subprocess
 from pathlib import Path
 from graph import plot_confidence_scores
+from dotenv import load_dotenv
+load_dotenv()
 def main():
     st.title("LLM Consortium Orchestrator")
     
