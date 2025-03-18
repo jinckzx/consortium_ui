@@ -228,6 +228,7 @@ def main():
         ]
         
         # Add models
+        #AWOOOOOOOOOOOOOOOOOOOOOOOOO
         for model, count in model_count.items():
             cmd.extend(["--model", model, "-n", str(count)])
         
